@@ -4,10 +4,9 @@ let btns = document.querySelectorAll('button');
 let colors = [0,0,0];
 var cell;
 let activeButton;
-let input = document.getElementById('grid-input').value;
+let input = document.getElementById('grid-input');
 
 function makeGrid(rows, cols) {
-    let size = Math.floor(((780/rows)-7));
     container.style.gridTemplateRows = `repeat(${rows}, auto)`;
     container.style.gridTemplateColumns = `repeat(${cols}, auto)`;
     for (c = 0; c < (rows * cols); c++) {
@@ -40,6 +39,9 @@ btns.forEach((element)=>{
                     activeButton = '';
                     container.innerHTML = '';
                     makeGrid(Number(input.value), Number(input.value));
+                    input.value = '';
+                    console.log(input.value);
+                    console.log(input.value);
                     document.getElementById('btn-black').setAttribute('style','top: 0px; box-shadow: 1px 10px 5px #000');
                     document.getElementById('btn-random').setAttribute('style','top: 0px; box-shadow: 1px 10px 5px #000');
                     document.getElementById('btn-start').setAttribute('style','top: 0px; box-shadow: 1px 10px 5px #000');
